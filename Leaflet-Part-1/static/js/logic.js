@@ -77,19 +77,16 @@ d3.json(url).then(function(data){
   
     // loop through our depth intervals and generate a label with a colored square for each interval
     for (let i = 0; i < depths_intervals.length; i++) {
-      div.innerHTML +=
+    div.innerHTML +=
           '<i style="background:' + getColor(depths_intervals[i] + 1) + '"></i> ' +
           depths_intervals[i] + (depths_intervals[i + 1] ? '&ndash;' + depths_intervals[i + 1] + '<br>' : '+') + '<br>';
     }
-  
+    
+    // Return the legend container with HTML content
     return div;
 
-
-
-
-
-  };
-  
+};
+  // Add the legend control to the Leaflet map
   legend.addTo(myMap);
   
   });
